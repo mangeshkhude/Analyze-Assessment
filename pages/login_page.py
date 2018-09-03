@@ -21,6 +21,13 @@ class Login(BasePage):
     _select_answer = "//label[contains(text(),'blue')]"
     _apply_filter = "//a[contains(@class,'wds-button wds-button--primary wds-button--sm apply-btn')]"
     _verify_filter = "//span[contains(@class,'soft-text')][contains(text(), 'filter:')]"
+    _edit_respondant = "//div[contains(@class,'respondents clearfix slideable')]//div[2]//div[1]//div[1]//div[1]//a[contains(text(), 'Edit')]"
+    _delete_respondant = "//div[contains(@class,'respondents clearfix slideable')]//div[2]//div[1]//div[1]//div[1]//a[contains(text(), 'Delete')]"
+    _export_respondant = "//div[contains(@class,'respondents clearfix slideable')]//div[2]//div[1]//div[1]//div[1]//a[contains(text(), 'Export')]"
+    _delete_respondant_popup = "//h5[contains(text(),'Delete Respondent')]"
+    _export_respondant_popup = "//h5[contains(text(),'Export Survey Data')]"
+    _close_delete_popup = "//div[contains(@class,'dialog-btn-bar short-btn-bar clearfix')]//a[contains(@class,'wds-button wds-button--util wds-button--sm cancel-btn')][contains(text(),'CANCEL')]"
+    _close_export_popup = "//div[contains(@class,'clearfix sm-corner-b')]//a[contains(@class,'wds-button wds-button--util wds-button--sm cancel-btn')][contains(text(),'CANCEL')]"
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -84,3 +91,28 @@ class Login(BasePage):
         self.addFilter()
         time.sleep(5)
         return self.isElementPresent(self._verify_filter, locatorType="xpath")
+
+    def verifyEditRespondant(self):
+        self.elementClick(self._edit_respondant, locatorType="xpath")
+        windowHandler = self.driver.window_handles
+        size = len(windowHandler)
+
+        for x in range(size):
+            self.driver.switch_to.window(windowHandler[x])
+            self.log.info("Title name of new browser: "+self.driver.title+"Size : "+str(x))
+            if self.driver.title == "Test Analyze SurveySize" :
+                return True
+            else:
+                return False
+
+    def verifyDeleteRespondant(self):
+        self.elementClick(self._delete_respondant, locatorType="xpath")
+        result = self.isElementPresent(self._delete_respondant_popup, locatorType="xpath")
+        self.elementClick(self._close_delete_popup, locatorType="xpath")
+        return result
+
+    def verifyExportRespondant(self):
+        self.elementClick(self._export_respondant, locatorType="xpath")
+        result = self.isElementPresent(self._export_respondant_popup, locatorType="xpath")
+        self.elementClick(self._close_export_popup, locatorType="xpath")
+        return result

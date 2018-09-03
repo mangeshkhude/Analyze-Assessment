@@ -1,5 +1,8 @@
 [
   "test_suite.py::LoginAndLandOnAnalyze::test_T1login_and_land_analyze",
   "test_suite.py::LoginAndLandOnAnalyze::test_T2go_to_first_respondant",
-  "test_suite.py::LoginAndLandOnAnalyze::test_T3verify_filter"
+  "test_suite.py::LoginAndLandOnAnalyze::test_T3verify_filter",
+  "test_suite.py::LoginAndLandOnAnalyze::test_T4verify_edit_respondant",
+  "test_suite.py::LoginAndLandOnAnalyze::test_T6verify_export_respondant",
+  "test_suite.py::LoginAndLandOnAnalyze::test_t5verify_delete_respondant"
 ]

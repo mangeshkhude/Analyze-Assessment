@@ -1,3 +1,4 @@
 {
-  "test_login_and_land_on_analyze.py::LoginAndLandOnAnalyze::test_login_and_land_analyze": true
+  "test_login_and_land_on_analyze.py::LoginAndLandOnAnalyze::test_login_and_land_analyze": true,
+  "test_suite.py::LoginAndLandOnAnalyze::test_T4verify_edit_respondant": true
 }
