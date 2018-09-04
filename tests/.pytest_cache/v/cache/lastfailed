@@ -1,4 +1,7 @@
 {
   "test_login_and_land_on_analyze.py::LoginAndLandOnAnalyze::test_login_and_land_analyze": true,
-  "test_suite.py::LoginAndLandOnAnalyze::test_T4verify_edit_respondant": true
+  "test_suite.py::LoginAndLandOnAnalyze::test_T4verify_edit_respondant": true,
+  "test_suite.py::LoginAndLandOnAnalyze::test_T6verify_export_respondant": true,
+  "test_suite.py::LoginAndLandOnAnalyze::test_t4verify_delete_respondant": true,
+  "test_suite.py::LoginAndLandOnAnalyze::test_t5verify_delete_respondant": true
 }

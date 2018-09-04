@@ -95,15 +95,13 @@ class Login(BasePage):
     def verifyEditRespondant(self):
         self.elementClick(self._edit_respondant, locatorType="xpath")
         windowHandler = self.driver.window_handles
-        size = len(windowHandler)
+        self.driver.switch_to.window(windowHandler[1])
+        self.log.info("Title name of new browser: "+self.driver.title)
+        if self.driver.title == "Test Analyze Survey" :
+            self.log.info("EXPORT IF : "+str(self.driver.title))
+            #self.driver.close()
+            return True
 
-        for x in range(size):
-            self.driver.switch_to.window(windowHandler[x])
-            self.log.info("Title name of new browser: "+self.driver.title+"Size : "+str(x))
-            if self.driver.title == "Test Analyze SurveySize" :
-                return True
-            else:
-                return False
 
     def verifyDeleteRespondant(self):
         self.elementClick(self._delete_respondant, locatorType="xpath")

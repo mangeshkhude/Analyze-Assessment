@@ -27,11 +27,11 @@ class LoginAndLandOnAnalyze(unittest.TestCase):
     def test_T3verify_filter(self):
         assert self.lp.verifyFilter()
 
-    def test_T4verify_edit_respondant(self):
-        assert self.lp.verifyEditRespondant()
-
-    def test_t5verify_delete_respondant(self):
+    def test_T4verify_delete_respondant(self):
         assert self.lp.verifyDeleteRespondant()
 
-    def test_T6verify_export_respondant(self):
+    def test_T5verify_export_respondant(self):
         assert self.lp.verifyExportRespondant()
+
+    def test_T6verify_edit_respondant(self):
+        assert self.lp.verifyEditRespondant()
